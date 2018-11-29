@@ -33,7 +33,8 @@ public:
 		int * data; int length;
 		EncryptedString(int * _data, int _length) : data(_data), length(_length) {}
 		void print() {
-			for (int i = 0; i < length; ++i) std::cout << data[i];
+			for (int i = 0; i < length; ++i)
+				std::cout << data[i];
 			std::cout << std::endl;
 		}
 	};
@@ -55,6 +56,7 @@ public:
 			//对应字符与叶结点
 			if (head->getChar() != 0) pointerToLeaves[head->getChar()] = head;
 			if (nodeAfterHead->getChar() != 0) pointerToLeaves[nodeAfterHead->getChar()] = nodeAfterHead;
+			
 			pq.push(TreeNode(head, nodeAfterHead));
 		}
 		//树根
@@ -72,7 +74,7 @@ public:
 		for (int i = _length - 1; i >= 0; i--) {
 			TreeNode * pointer = pointerToLeaves[_string[i]];
 			
-			while (~pointer->isRightChild()) {
+			while (~(pointer->isRightChild())) {
 				data[top++] = pointer->isRightChild();
 				pointer = pointer->getFather();
 			}
@@ -99,4 +101,3 @@ public:
 		return string;
 	}
 };
-

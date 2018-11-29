@@ -47,7 +47,7 @@ public:
 	}
 
 	bool operator < (const TreeNode & rhs) const {
-		return _freq < rhs._freq;
+		return _freq > rhs._freq;
 	}
 
 };

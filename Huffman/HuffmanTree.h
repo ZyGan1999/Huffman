@@ -19,11 +19,16 @@ public:
 	void printCode() {
 		for (auto i : pointerToLeaves) {
 			std::cout << i.first << ' ';
+			int * data = new int(MAX_ENCRYPTED_SIZE);
+			int top = 0;
 			auto p = i.second;
 			while (p != root) {
-				std::cout << p->isRightChild();
+				data[top++] = p->isRightChild();
 				p = p->getFather();
 			}
+			std::reverse(data, data + top);
+			for (int i = 0; i < top; ++i)
+			std::cout << data[i];
 			std::cout << std::endl;
 		}
 	}
@@ -49,6 +54,7 @@ public:
 			charSetFreq[string[i]]++;
 		for (auto itPair : charSetFreq)
 			pq.push(TreeNode(itPair.first, itPair.second));
+		
 
 		while (pq.size() > 1) {
 			TreeNode * head = new TreeNode(pq.top()); pq.pop();

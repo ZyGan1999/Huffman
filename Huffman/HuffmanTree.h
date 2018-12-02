@@ -17,6 +17,7 @@ public:
 	static const int MAX_STRING_SIZE = 65535;
 
 	void printCode() {
+		//输出字符与它对应的编码
 		for (auto i : pointerToLeaves) {
 			std::cout << i.first << ' ';
 			int * data = new int(MAX_ENCRYPTED_SIZE);
@@ -35,6 +36,7 @@ public:
 	}
 
 	class EncryptedString {
+		//加密字符串
 	public:
 		int * data; int length;
 		EncryptedString(int * _data, int _length) : data(_data), length(_length) {}

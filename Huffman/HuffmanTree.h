@@ -31,6 +31,7 @@ public:
 			std::cout << data[i];
 			std::cout << std::endl;
 		}
+		std::cout << "-----------------------------------" << std::endl;
 	}
 
 	class EncryptedString {

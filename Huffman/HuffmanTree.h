@@ -17,6 +17,7 @@ public:
 	static const int MAX_STRING_SIZE = 65535;
 
 	void printCode() {
+		int WPL = 0;
 		//输出字符与它对应的编码
 		for (auto i : pointerToLeaves) {
 			std::cout << i.first << ' ';
@@ -31,7 +32,9 @@ public:
 			for (int i = 0; i < top; ++i)
 			std::cout << data[i];
 			std::cout << std::endl;
+			WPL += top * i.second->getFrequence();
 		}
+		std::cout << "WPL = " << WPL << std::endl;
 		std::cout << "-----------------------------------" << std::endl;
 	}
 
